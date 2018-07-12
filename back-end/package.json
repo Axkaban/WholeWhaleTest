@@ -1,0 +1,18 @@
+{
+  "name": "whole-whale-test",
+  "version": "1.0.0",
+  "description": "server utilizing dynamoDB and returning a csv file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Axel Kaban",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.273.1",
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "fast-csv": "^2.4.1"
+  }
+}
