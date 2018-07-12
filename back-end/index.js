@@ -26,9 +26,39 @@ const PORT = process.env.PORT || 8080;
 
 app.use(cors());
 
-// request for display
+//  request for all donors
 
-app.get('/:id', (req, res) => {
+app.get('/index', (req, res) => {
+
+  let arrData = [];
+
+  const params = {
+    TableName: "Donors",
+    ProjectionExpression: "DonationAmount, DonationDate, LastName, EmailAdress, FirstName, OrganizationId"
+  };
+
+  docClient.scan(params, function (err, data) {
+
+    if (err) {
+      console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
+    } else {
+
+      let obj = req.body.obj;
+
+
+      data.Items.forEach((item) => {
+        arrData.push(item);
+
+      });
+
+      res.json(arrData);
+    }
+  });
+})
+
+// request for display items from one organization
+
+app.get('/index/:id', (req, res) => {
 
   let arrData = [];//array will contain the rows as object items
 
@@ -62,7 +92,6 @@ app.get('/:id', (req, res) => {
         console.log("DONE!");
       })
 
-      console.log("Query succeeded.");
 
 
       csvStream.pipe(writableStream);
@@ -72,7 +101,6 @@ app.get('/:id', (req, res) => {
         csvStream.write(item); // add the results in the file
 
       });
-      console.log(arrData);
 
       csvStream.end();
 
