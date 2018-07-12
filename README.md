@@ -1,20 +1,32 @@
-# Whole WHale's Full Stack Developer Whaler Test Project
+# Whole Whale's Full Stack Developer Whaler Test Project
 
 ## Overview
 
 ##### Requirements:
 ○ Use the sample data set of donors that we provide called MockDonorsData.csv
+
+
 ○ DynamoDB​ must be used as the backend data store and your server must be
 written in Node.js
+
+
 ○ Your server must provide the following routes:
+
+
 ■ GET /index
+
+
 ● The homepage for your application. This page should look like the
 provided mockup. It will contain a button that should send an
 AJAX request to the /export​ endpoint on click.
 
 ■ POST /export
+
+
 ● A JSON API endpoint that returns a CSV file of donors from the
 sample data that match the provided OrganizationId.
+
+
 ● Request Body: ​ { organizationId: <String>}
 
 ### Before starting
@@ -30,7 +42,7 @@ Note: Server and front end are separate, so they are both going to be started. s
 * React
 * Material-Ui
 
-##Follow up Questions
+## Follow up Questions
 
 ##### What issues/limitations might this system face in a real production environment? How could you solve them?
 
