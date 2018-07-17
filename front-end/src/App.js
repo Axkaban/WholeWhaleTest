@@ -25,7 +25,7 @@ class App extends Component {
   }
 
   componentWillMount(){
-    axios.get('http://localhost:8080/index')
+    axios.get('https://donors-log.herokuapp.com/index')
     .then((res) => {
 
           this.setState({
@@ -52,7 +52,7 @@ class App extends Component {
   // gets the results from the db based on the organzation id
   handleClick = () => {
     console.log('called');
-    axios.get(`http://localhost:8080/index/${this.state.donorId}`)
+    axios.get(`https://donors-log.herokuapp.com/index/${this.state.donorId}`)
       .then((res) => {
 
         this.setState({
@@ -65,9 +65,9 @@ class App extends Component {
 
   //method to return th csv file with n organization's donors.
   getCsv = () => {
-    axios.get(`http://localhost:8080/export/${this.state.donorId}`)
+    axios.get(`https://donors-log.herokuapp.com/export/${this.state.donorId}`)
       .then(res => {
-        window.location = `http://localhost:8080/export/${this.state.donorId}`
+        window.location = `https://donors-log.herokuapp.com/export/${this.state.donorId}`
       });
   }
 

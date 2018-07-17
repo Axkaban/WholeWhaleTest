@@ -35,6 +35,14 @@ Do not forget to run `npm install` after cloning. set up the database by running
 
 Note: Server and front end are separate, so they are both going to be started. server runs on `http://localhost:8080` and front end runs in `http://localhost:3000`
 
+## UPDATE
+server is now hosted on `https://donors-log.herokuapp.com/` where `https://donors-log.herokuapp.com/index` will show all donors, `https://donors-log.herokuapp.com/index/:id` shows donors with the same organization id and `https://donors-log.herokuapp.com/export/:id` generates the csv file of the donors with the same organization id.
+
+All routes have been updated in the front end app, now when using the hosted server, you just need to navigate to the front-end directory and run: 
+ `npm install`
+ `npm start`
+ for the react app to run. No need for migration or seeds.
+
 ##### Main Dependencies
 * express
 * aws-sdk

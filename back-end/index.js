@@ -5,12 +5,13 @@ const bodyParser = require('body-parser');
 const AWS = require("aws-sdk");
 const csv = require("fast-csv");
 const fs = require('fs');
+require('dotenv').config();
 
 // AWS configuration for dynamo db
 
 AWS.config.update({
-  accessKeyId: AWS_ACCESS_KEY_ID,
-  secretAccessKey: AWS_SECRET_ACCESS_KEY,
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: "us-east-1",
   endpoint: "https://dynamodb.us-east-1.amazonaws.com"
 });

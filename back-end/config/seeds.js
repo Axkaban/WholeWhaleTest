@@ -1,10 +1,13 @@
 const AWS = require("aws-sdk");
 const fs = require('fs');
 const csv = require("fast-csv");
+require('dotenv').config();
 
 var stream = fs.createReadStream('./MockDonorsData.csv');
 
 AWS.config.update({
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
   region: "us-east-1",
   endpoint: "https://dynamodb.us-east-1.amazonaws.com"
 });
